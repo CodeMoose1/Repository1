@@ -8,7 +8,6 @@
 
 <nav>
 	<a href="{base}/">Home</a>
-	<a href="{base}/about">About</a>
 	<a href="{base}/photoapp">Photo App</a>
 	<a href="{base}/register">Register</a>
 	<a href="{base}/login" >Login</a>
