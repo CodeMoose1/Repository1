@@ -31,7 +31,10 @@
     
     
     function handleSubmit(){
-        console.log(users)
+        if (!name || !email || !password || !color){
+            alert("Please fill out all fields")
+            return
+        }
         if (users.some(user => user.username === name)){
             alert("Username already taken")
             return
@@ -43,8 +46,6 @@
         let new_user = {username: name, password: password, email: email, color: color};
         users = [...users, new_user];
         $users_store = JSON.stringify(users);
-
-        console.log(users)
         
     }
     
