@@ -59,7 +59,7 @@
 </script>
 
 <main>
-    <section style="overflow-y:scroll;" class="chat">
+    <section style="overflow-y:auto;" class="chat">
         {#each chat as message}
 
             <article data-time={get_time()} class={message.user}>
@@ -182,6 +182,9 @@ main{
     border-width: 4px;
     border-color: dimgrey;
     transition: all 0.2s ease-out;
+}
+form{
+    width: 100%;
 }
 .box:focus{
     box-shadow: 0 0 5px 5px darkturquoise;
