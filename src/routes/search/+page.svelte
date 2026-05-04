@@ -21,18 +21,30 @@
     
     // Hämta värdet från input-fältet med name="search"
     const search = formData.get('search');
-    add_search(search)
+    
     // Navigera till den dynamiska routen /search/[pokemon]
     goto(base + '/search/' + search);
   }
 
-  function add_search(name){
-    if (searches.some((s)=>s===name))
-        return
-    searches.push(name)
-    if (searches.length > 5)
-        searches.shift()
-    $search_store = JSON.stringify(searches)
+  const type_colors = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD"
   }
 
 </script>
@@ -43,7 +55,7 @@
     </form>
     <footer>
         {#each searches as search}
-            <a href="{base + '/search/' + search}" style="background-color: rgb({Math.random()*255}, {Math.random()*255}, {Math.random()*255});">{search}</a>
+            <a href="{base + '/search/' + search.name}" style="background-color: {type_colors[search.types[0].type.name]};">{search.name}</a>
         {/each}
     </footer>
 </main>

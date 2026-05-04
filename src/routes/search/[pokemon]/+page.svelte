@@ -1,8 +1,24 @@
 
 <script>
-    import { base } from '$app/paths';
+  import {search_store} from "$lib/searches";
+  import { onMount } from 'svelte';
+  let searches = []
+  onMount(() => {
+    if($search_store.length > 2){
+        searches = JSON.parse($search_store);
+    }
+    if (searches.some((s)=>s.name===data.response.name))
+        return
+    searches.push(data.response)
+    if (searches.length > 5)
+        searches.shift()
+    $search_store = JSON.stringify(searches)
+  });
+
+  import { base } from '$app/paths';
   /** @type {import('./$types').PageData} */
   export let data;
+  
 </script>
 
 <a href="{base}/search">Back to search</a>
