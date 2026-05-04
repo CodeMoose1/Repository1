@@ -54,6 +54,7 @@
         flex-basis: 300px;
         height: 400px;
         size: 300px;
+        margin: 10px;
         align-items: center;
         transition: flex-grow 1s;
         transition-timing-function: ease;
@@ -61,7 +62,7 @@
     }
     
     .image-wrapper img{
-        width: 90%;
+        width: 100%;
         height: 100%;
         border: 2px solid white;
         border-radius: 20px;
