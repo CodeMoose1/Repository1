@@ -50,6 +50,7 @@
 
 article{
     display: flex;
+    justify-content: center;
     width: 90%;
     height: 30%;
     gap: 1em;
