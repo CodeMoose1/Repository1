@@ -150,7 +150,7 @@ main{
     background-color:cornflowerblue;
     box-shadow: 0 0 10px 10px cornflowerblue;
     padding:20px;
-
+    transition: all 0.5s linear;
 }
 .background{
     background-color: red;
